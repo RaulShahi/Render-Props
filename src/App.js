@@ -6,21 +6,23 @@ function App() {
   return (
     <div style={divStyle}>
       <WrapperComponent
-        render={(data, showData, deleteHandler) => (
+        render={(data, showData, deleteHandler, addHandler) => (
           <UserFinder
             data={data}
             showData={showData}
             deleteHandler={deleteHandler}
+            addHandler={addHandler}
           />
         )}
         entity="users"
       />
       <WrapperComponent
-        render={(data, showData, deleteHandler) => (
+        render={(data, showData, deleteHandler,addHandler) => (
           <TodoFinder
             data={data}
             showData={showData}
             deleteHandler={deleteHandler}
+            addHandler={addHandler}
           />
         )}
         entity="todos"

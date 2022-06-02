@@ -48,6 +48,11 @@ const WrapperComponent = ({ render, entity }) => {
   const searchChangeHandler = (event) => {
     setSearchTerm(event.target.value);
   };
+
+  const addHandler = (newData) => {
+    setFetchedData(fetchedData.concat(newData));
+    setFilteredData(fetchedData.concat(newData));
+  };
   const deleteHandler = (id) => {
     setFetchedData(fetchedData.filter((item) => item.id !== id));
     setFilteredData(fetchedData.filter((item) => item.id !== id));
@@ -67,7 +72,7 @@ const WrapperComponent = ({ render, entity }) => {
           show={showData}
           handleToggle={toggleHandler}
         />
-        {render(filteredData, showData, deleteHandler)}
+        {render(filteredData, showData, deleteHandler, addHandler)}
       </div>
     </div>
   );

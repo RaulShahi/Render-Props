@@ -1,6 +1,6 @@
 import React from "react";
 
-const Add = ({ type }) => {
-  return <button>Add {type}</button>;
+const Add = ({ type, onClick }) => {
+  return <button onClick={() => onClick()}>Add {type}</button>;
 };
 export default Add;
